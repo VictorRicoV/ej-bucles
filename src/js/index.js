@@ -176,3 +176,38 @@ const invertWord = (word) => {
   console.log(newWord);
 };
 invertWord("Mariposa");
+
+//Crea una función que reciba un array de 10 números. Dentro de esa función crea dos arrays vacíos llamados even (pares) y odd (impares), después multiplica cada uno de los números del array recibido por un número aleatorio entre 1 y 10, si el resultado es par, guárdalo en el array de pares, si es impar, en el array de impares, al final, imprime los 3 arrays por consola.
+
+const evenAndOdd = (array) => {
+  let even = [];
+  let odd = [];
+  for (let counter = 0; counter < array.length; counter++) {
+    let number = array[counter];
+    let randomNumber = Math.floor(Math.random() * 10) + 1;
+    let result = number * randomNumber;
+    if (result % 2 === 0) {
+      even.push(result);
+    } else {
+      odd.push(result);
+    }
+  }
+  console.log(
+    `El array original es ${array}. El Array de pares es ${even}. El Array de impares es ${odd}.`
+  );
+};
+
+evenAndOdd([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+const fiveWords = (array) => {
+  let newArray = [];
+  for (let counter = 0; counter < array.length; counter++) {
+    let word = array[counter];
+    let firstLetter = word.charAt(0).toUpperCase();
+    let finalLetter = word.charAt(word.length - 1).toUpperCase();
+    newArray.push(firstLetter, finalLetter);
+  }
+  console.log(newArray);
+};
+
+fiveWords(["hola", "adios", "gato", "perro", "casa"]);
